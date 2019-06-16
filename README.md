@@ -26,10 +26,10 @@ You can now add the token on your `.env` file:
 COGUL_TOKEN=random_token_here
 ```
 
-You can publish the config with (optionnal):
+You can publish the config with (optional):
 
 ```bash
-php artisan vendor:publish --provider=Milhouse1337\Cogul\CogulServiceProvider --tag="config"
+php artisan vendor:publish --provider="Milhouse1337\Cogul\CogulServiceProvider"
 ```
 
 Here is an example `config/cogul.php` file:
@@ -48,17 +48,21 @@ return [
 
 ## Usage
 
-You have to define the routes you want to secure with the `auth.cogul` middleware, lile this:
+You have to define the routes you want to secure with the `auth.cogul` middleware, like this:
 
 ```php
 Route::get('example', 'Controller@example')->middleware('auth.cogul');
 ```
 
-Now if you access this URL you will get a `403` response from the server. In order to get the expected response you need to access the following URL first to set the `cogul` cookie in your browser:
+Now if you `GET` this `/example` you will have a `403` response from Laravel.
+
+In order to get the expected response, you need to access the following link in your browser to set the `cogul` cookie:
 
 `/auth/token/random_token_here`
 
-You will now be able to access the secure page.
+The cookie should be stored in your browser and you will be redirected to the URL you configured.
+
+You will now be able to access `/example` normally.
 
 ## Credits
 
