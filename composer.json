@@ -1,0 +1,27 @@
+{
+    "name": "milhouse1337/cogul",
+    "description": "This package can secure any route in Laravel with a simple cookie.",
+    "homepage": "https://github.com/milhouse1337/cogul",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pascal Meunier"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Milhouse1337\\Cogul\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Milhouse1337\\Cogul\\CogulServiceProvider"
+            ]
+        }
+    }
+}
