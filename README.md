@@ -20,7 +20,7 @@ To generate a random token (string) you can use `openssl` like this:
 openssl rand -hex 32
 ```
 
-You can now add the token on your `.env` file:
+Add the token on your `.env` file:
 
 ```
 COGUL_TOKEN=random_token_here
@@ -36,13 +36,13 @@ Here is an example `config/cogul.php` file:
 
 ```php
 return [
-    'token' => env('COGUL_TOKEN', ''),
-    'url' => env('COGUL_URL', '/auth/token/{token}'),
-    'redirect' => env('COGUL_REDIRECT', '/'),
-    'cookie' => env('COGUL_COOKIE', 'cogul'),
+    'token'      => env('COGUL_TOKEN', ''),
+    'url'        => env('COGUL_URL', '/auth/token/{token}'),
+    'redirect'   => env('COGUL_REDIRECT', '/'),
+    'cookie'     => env('COGUL_COOKIE', 'cogul'),
     'expiration' => env('COGUL_EXPIRATION', 2628000), // 5 years.
     'middleware' => env('COGUL_MIDDLEWARE', 'web'),
-    'whitelist' => [],
+    'whitelist'  => [],
 ];
 ```
 
@@ -62,7 +62,7 @@ In order to get the expected response, you need to access the following link in 
 
 The cookie should be stored in your browser and you will be redirected to the URL you configured.
 
-You will now be able to access `/example` normally.
+You will now be able to access `/example` normally until the cookie gets expired or deleted.
 
 ## Credits
 
