@@ -2,6 +2,9 @@
 
 **CO**okie **GU**ard for **L**aravel
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/milhouse1337/cogul.svg?style=flat-square)](https://packagist.org/packages/milhouse1337/cogul)
+[![Total Downloads](https://img.shields.io/packagist/dt/milhouse1337/cogul.svg?style=flat-square)](https://packagist.org/packages/milhouse1337/cogul)
+
 This package can secure any route in Laravel with a simple cookie. It will prevent anyone (or anything) to access a specific route if the cookie value you defined is not present on the request.
 
 ## Installation
