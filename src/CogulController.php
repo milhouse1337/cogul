@@ -15,9 +15,11 @@ class CogulController extends Controller
             return 'Invalid token.';
         }
 
+        $redirect = request()->get('redirect', config('cogul.redirect'));
+
         $cookie = cookie(config('cogul.cookie'), $valid_token, config('cogul.expiration'));
 
-        return redirect(config('cogul.redirect'))->cookie($cookie);
+        return redirect($redirect)->cookie($cookie);
     }
 
 }
